@@ -7,20 +7,15 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        .hidden { display: none !important; }
-        .website-opener { text-align: center; margin: 30px 0; }
-        .website-opener a { font-size: 1.2rem; padding: 15px 30px; }
-    </style>
 </head>
 <body>
     <!-- شريط الوصول -->
     <div class="accessibility-bar">
-        <button onclick="increaseFont()" title="تكبير الخط"><i class="fas fa-text-height"></i></button>
-        <button onclick="decreaseFont()" title="تصغير الخط"><i class="fas fa-text-width"></i></button>
-        <button onclick="toggleContrast()" title="تباين عالي"><i class="fas fa-adjust"></i></button>
-        <button onclick="readPage()" title="قراءة الصفحة"><i class="fas fa-volume-up"></i></button>
-        <button onclick="stopReading()" title="إيقاف القراءة"><i class="fas fa-stop"></i></button>
+        <button onclick="increaseFont()"><i class="fas fa-text-height"></i></button>
+        <button onclick="decreaseFont()"><i class="fas fa-text-width"></i></button>
+        <button onclick="toggleContrast()"><i class="fas fa-adjust"></i></button>
+        <button onclick="readPage()"><i class="fas fa-volume-up"></i></button>
+        <button onclick="stopReading()"><i class="fas fa-stop"></i></button>
     </div>
 
     <!-- الرأس -->
@@ -34,82 +29,64 @@
                 <ul>
                     <li><a href="#home" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
                     <li><a href="#training"><i class="fas fa-play-circle"></i> ابدأ التدريب</a></li>
-                    <li><a href="#services"><i class="fas fa-list"></i> الخدمات</a></li>
-                    <li><a href="#stats"><i class="fas fa-chart-bar"></i> الإحصائيات</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- القسم الرئيسي -->
     <main>
         <!-- الترحيب -->
         <section id="home" class="hero">
             <div class="container">
-                <div class="hero-content">
-                    <h2>تدريب <span style="color:#FFB400">عملي حقيقي</span> على المواقع الحكومية</h2>
-                    <p>هنفتح معاك المواقع الحكومية الحقيقية ونشرحلك كل خطوة بالصوت والصورة</p>
-                    <a href="#training" class="btn-primary">
-                        <i class="fas fa-rocket"></i> ابدأ التدريب الآن
-                    </a>
-                </div>
-                <div class="hero-image">
-                    <img src="https://cdn.pixabay.com/photo/2017/08/10/08/47/laptop-2620118_1280.jpg" alt="تدريب رقمي">
-                </div>
-            </div>
-        </section>
-
-        <!-- التدريب العملي -->
-        <section id="training" class="section">
-            <div class="container">
-                <h2 class="section-title">التدريب العملي الحقيقي</h2>
-                <p class="section-subtitle">اختار الخدمة اللي عايز تتدرب عليها</p>
+                <h1>التدريب العملي الحقيقي</h1>
+                <p class="subtitle">اختر الخدمة التي تريد التدرب عليها</p>
                 
-                <div class="training-options">
-                    <!-- التدريب 1: استخراج بطاقة -->
-                    <div class="training-card">
-                        <div class="card-icon">
-                            <i class="fas fa-id-card"></i>
-                        </div>
-                        <h3>استخراج بطاقة رقم قومي</h3>
-                        <p>تدريب عملي على موقع مصر الرقمية</p>
-                        <div class="card-steps">
-                            <span><i class="fas fa-check"></i> 5 خطوات عملية</span>
-                            <span><i class="fas fa-clock"></i> 15 دقيقة</span>
-                        </div>
-                        <button class="start-training-btn" onclick="startTraining('national-id')">
-                            <i class="fas fa-play"></i> ابدأ التدريب
-                        </button>
-                    </div>
-
-                    <!-- التدريب 2: دفع فواتير -->
-                    <div class="training-card">
-                        <div class="card-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h3>دفع فاتورة الكهرباء</h3>
-                        <p>تدريب على موقع شركة الكهرباء</p>
-                        <div class="card-steps">
-                            <span><i class="fas fa-check"></i> 4 خطوات عملية</span>
-                            <span><i class="fas fa-clock"></i> 10 دقائق</span>
-                        </div>
-                        <button class="start-training-btn" onclick="startTraining('electricity')">
-                            <i class="fas fa-play"></i> ابدأ التدريب
-                        </button>
-                    </div>
-
-                    <!-- التدريب 3: حجز موعد -->
+                <!-- بطاقات التدريب -->
+                <div class="training-cards">
+                    <!-- بطاقة 1: حجز موعد طبي -->
                     <div class="training-card">
                         <div class="card-icon">
                             <i class="fas fa-calendar-check"></i>
                         </div>
                         <h3>حجز موعد طبي</h3>
                         <p>تدريب على حجز المواعيد بالمستشفيات</p>
-                        <div class="card-steps">
-                            <span><i class="fas fa-check"></i> 6 خطوات عملية</span>
+                        <div class="card-meta">
+                            <span><i class="fas fa-list-ol"></i> 6 خطوات عملية</span>
                             <span><i class="fas fa-clock"></i> 20 دقيقة</span>
                         </div>
-                        <button class="start-training-btn" onclick="startTraining('appointment')">
+                        <button class="start-btn" data-training="appointment">
+                            <i class="fas fa-play"></i> ابدأ التدريب
+                        </button>
+                    </div>
+
+                    <!-- بطاقة 2: دفع فاتورة الكهرباء -->
+                    <div class="training-card">
+                        <div class="card-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>دفع فاتورة الكهرباء</h3>
+                        <p>تدريب على موقع شركة الكهرباء</p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-list-ol"></i> 4 خطوات عملية</span>
+                            <span><i class="fas fa-clock"></i> 10 دقيقة</span>
+                        </div>
+                        <button class="start-btn" data-training="electricity">
+                            <i class="fas fa-play"></i> ابدأ التدريب
+                        </button>
+                    </div>
+
+                    <!-- بطاقة 3: استخراج بطاقة -->
+                    <div class="training-card">
+                        <div class="card-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h3>استخراج بطاقة رقم قومي</h3>
+                        <p>تدريب عملي على موقع مصر الرقمية</p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-list-ol"></i> 5 خطوات عملية</span>
+                            <span><i class="fas fa-clock"></i> 15 دقيقة</span>
+                        </div>
+                        <button class="start-btn" data-training="national-id">
                             <i class="fas fa-play"></i> ابدأ التدريب
                         </button>
                     </div>
@@ -118,151 +95,85 @@
         </section>
 
         <!-- محاكي التدريب -->
-        <section id="training-simulator" class="section hidden">
+        <section id="training-simulator" class="training-simulator hidden">
             <div class="container">
-                <div class="simulator">
-                    <!-- عنوان التدريب -->
-                    <div class="simulator-header">
-                        <h2 id="current-training-title">استخراج بطاقة رقم قومي</h2>
-                        <div class="step-counter">الخطوة <span id="current-step">1</span> من <span id="total-steps">5</span></div>
+                <!-- رأس المحاكي -->
+                <div class="simulator-header">
+                    <h2 id="simulator-title">استخراج بطاقة رقم قومي</h2>
+                    <div class="step-indicator">
+                        <span id="current-step">1</span> / <span id="total-steps">5</span>
+                    </div>
+                </div>
+
+                <!-- محتوى الخطوة -->
+                <div class="step-content">
+                    <!-- التعليمات -->
+                    <div class="instruction">
+                        <h3 id="step-title">الخطوة الأولى: افتح موقع مصر الرقمية</h3>
+                        <p id="step-description">سنفتح معك الموقع الرسمي للخدمات الحكومية. اضغط على الزر بالأسفل لفتح الموقع في نافذة جديدة.</p>
+                        
+                        <!-- زر فتح الموقع -->
+                        <div class="action-area">
+                            <a href="https://www.egypt.gov.eg" target="_blank" class="action-btn" id="website-link">
+                                <i class="fas fa-external-link-alt"></i> افتح موقع مصر الرقمية
+                            </a>
+                            <p class="hint">سيتم فتح الموقع في نافذة جديدة</p>
+                        </div>
+
+                        <!-- التفاصيل -->
+                        <div class="details">
+                            <h4><i class="fas fa-info-circle"></i> كيف تعمل:</h4>
+                            <ol id="step-steps">
+                                <li>اضغط على الزر فوق لفتح الموقع</li>
+                                <li>انتظر حتى يتحمل الموقع بالكامل</li>
+                                <li>ابحث عن زر "تسجيل الدخول"</li>
+                            </ol>
+                        </div>
                     </div>
 
-                    <!-- محتوى الخطوة -->
-                    <div class="step-content">
-                        <div class="step-instruction">
-                            <h3 id="step-title">الخطوة الأولى: افتح موقع مصر الرقمية</h3>
-                            <p id="step-description">هنفتح معاك الموقع الرسمي للخدمات الحكومية. اضغط على الزر بالأسفل لفتح الموقع في نافذة جديدة.</p>
-                            
-                            <!-- زر فتح الموقع -->
-                            <div class="website-opener">
-                                <a href="https://www.egypt.gov.eg" target="_blank" class="btn-primary" id="open-website-btn">
-                                    <i class="fas fa-external-link-alt"></i> افتح موقع مصر الرقمية الآن
-                                </a>
-                                <p class="note">سيتم فتح الموقع في نافذة جديدة. اترك هذه النافذة مفتوحة للتعليمات.</p>
-                            </div>
-
-                            <!-- شرح تفصيلي -->
-                            <div class="detailed-guide">
-                                <h4><i class="fas fa-info-circle"></i> كيف تعمل هذه الخطوة:</h4>
-                                <ol id="step-details">
-                                    <li>اضغط على الزر فوق لفتح الموقع</li>
-                                    <li>ابحث عن زر "تسجيل الدخول" في الأعلى</li>
-                                    <li>ادخل رقمك القومي وكلمة المرور</li>
-                                    <li>اضغط على زر "الدخول"</li>
-                                </ol>
-                            </div>
+                    <!-- المساعدات -->
+                    <div class="assistance">
+                        <!-- الصوت -->
+                        <div class="audio-box">
+                            <h4><i class="fas fa-volume-up"></i> المساعد الصوتي</h4>
+                            <button class="audio-btn" id="play-audio">
+                                <i class="fas fa-play"></i> استمع للشرح
+                            </button>
+                            <button class="audio-btn" id="repeat-audio">
+                                <i class="fas fa-redo"></i> أعد الشرح
+                            </button>
                         </div>
 
-                        <!-- أدوات المساعدة -->
-                        <div class="assistance-tools">
-                            <!-- المساعد الصوتي -->
-                            <div class="audio-assistant">
-                                <h4><i class="fas fa-volume-up"></i> المساعد الصوتي</h4>
-                                <button class="audio-btn" onclick="readCurrentStep()">
-                                    <i class="fas fa-play"></i> استمع لشرح الخطوة
-                                </button>
-                                <button class="audio-btn" onclick="repeatInstruction()">
-                                    <i class="fas fa-redo"></i> أعد الشرح
-                                </button>
-                                <button class="audio-btn" onclick="readSlowly()">
-                                    <i class="fas fa-tachometer-alt"></i> شرح بطيء
-                                </button>
-                            </div>
-
-                            <!-- نصائح -->
-                            <div class="tips-box">
-                                <h4><i class="fas fa-lightbulb"></i> نصائح مهمة</h4>
-                                <ul id="step-tips">
-                                    <li>تأكد من اتصالك بالإنترنت</li>
-                                    <li>احفظ الموقع في المفضلة</li>
-                                    <li>إذا واجهت مشكلة، حاول تحديث الصفحة</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- أدوات التحكم -->
-                        <div class="control-buttons">
-                            <button class="control-btn prev-btn" onclick="prevStep()">
-                                <i class="fas fa-arrow-right"></i> الخطوة السابقة
-                            </button>
-                            <button class="control-btn next-btn" onclick="nextStep()">
-                                الخطوة التالية <i class="fas fa-arrow-left"></i>
-                            </button>
-                            <button class="control-btn finish-btn" onclick="finishTraining()">
-                                <i class="fas fa-flag-checkered"></i> إنهاء التدريب
-                            </button>
+                        <!-- النصائح -->
+                        <div class="tips-box">
+                            <h4><i class="fas fa-lightbulb"></i> نصائح مهمة</h4>
+                            <ul id="step-tips">
+                                <li>تأكد من اتصال الإنترنت</li>
+                                <li>احفظ الموقع في المفضلة</li>
+                                <li>إذا واجهت مشكلة، أعد تحميل الصفحة</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- الخدمات -->
-        <section id="services" class="section">
-            <div class="container">
-                <h2 class="section-title">الخدمات الحكومية المتاحة</h2>
-                <div class="services-grid">
-                    <div class="service-item">
-                        <i class="fas fa-passport"></i>
-                        <h3>استخراج جواز سفر</h3>
-                        <p>تدريب على موقع وزارة الداخلية</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                        <h3>دفع الضرائب</h3>
-                        <p>تدريب على موقع مصلحة الضرائب</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-user-graduate"></i>
-                        <h3>التقديم في الجامعات</h3>
-                        <p>تدريب على موقع التنسيق الإلكتروني</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-car"></i>
-                        <h3>رخصة القيادة</h3>
-                        <p>تدريب على موقع إدارة المرور</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- إحصائيات -->
-        <section id="stats" class="section">
-            <div class="container">
-                <h2 class="section-title">أرقام حقيقية</h2>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <i class="fas fa-users"></i>
-                        <h3>2,450+</h3>
-                        <p>متدرب</p>
-                    </div>
-                    <div class="stat-item">
-                        <i class="fas fa-check-circle"></i>
-                        <h3>95%</h3>
-                        <p>معدل النجاح</p>
-                    </div>
-                    <div class="stat-item">
-                        <i class="fas fa-clock"></i>
-                        <h3>4,200+</h3>
-                        <p>ساعة تدريب</p>
-                    </div>
-                    <div class="stat-item">
-                        <i class="fas fa-star"></i>
-                        <h3>4.8</h3>
-                        <p>تقييم</p>
-                    </div>
+                <!-- أدوات التحكم -->
+                <div class="controls">
+                    <button class="control-btn" id="prev-btn">
+                        <i class="fas fa-arrow-right"></i> السابق
+                    </button>
+                    <button class="control-btn" id="next-btn">
+                        التالي <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button class="control-btn finish" id="finish-btn">
+                        <i class="fas fa-flag-checkered"></i> إنهاء
+                    </button>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- التذييل -->
-    <footer>
-        <div class="container">
-            <p>مشروع "وصول" - تمكين ذوي الاحتياجات الخاصة من الخدمات الحكومية الرقمية</p>
-            <p>© 2023 - جميع الحقوق محفوظة</p>
-        </div>
-    </footer>
+    <!-- الإشعارات -->
+    <div id="notification" class="notification"></div>
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
