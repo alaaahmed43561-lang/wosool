@@ -1,88 +1,129 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>وصول | تدريب ذوي الاحتياجات الخاصة</title>
-  <style>
-    body{font-family:Arial;background:#f5f5f5;margin:0;line-height:1.8}
-    header{background:#0057b7;color:white;padding:20px;text-align:center}
-    nav{background:#eee;padding:10px;text-align:center}
-    nav button{margin:5px}
-    section{padding:20px}
-    .card{background:white;padding:15px;margin:10px 0;border-radius:8px}
-    button{padding:10px 15px;font-size:16px;cursor:pointer}
-    .hidden{display:none}
-    .big{font-size:22px}
-  </style>
+<meta charset="UTF-8">
+<title>Wosool | Accessible Digital Services</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #333;
+  line-height: 1.7;
+}
+header {
+  background: #0a4d8c;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+section {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+h2 {
+  color: #0a4d8c;
+}
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #0a4d8c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+footer {
+  background: #0a4d8c;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+.large-text {
+  font-size: 22px;
+}
+.high-contrast {
+  background: black;
+  color: yellow;
+}
+</style>
 </head>
+
 <body>
+
 <header>
-  <h1>موقع وصول</h1>
-  <p>منصة تدريب ذوي الاحتياجات الخاصة على استخدام الخدمات الحكومية الرقمية</p>
+  <h1>Wosool</h1>
+  <p>Accessible Digital Government Services for Everyone</p>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#training">Training</a>
+    <a href="#tools">Accessibility</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
-<nav>
-  <button onclick="showPage('home')">الرئيسية</button>
-  <button onclick="showPage('training')">التدريب</button>
-  <button onclick="showPage('admin')">مدير النظام</button>
-  <button onclick="increaseFont()">تكبير الخط</button>
-  <button onclick="readText()">🔊 قراءة صوتية</button>
-</nav>
 
-<section id="home" class="page">
-  <div class="card">
-    <h2>اختر نوع الإعاقة</h2>
-    <button onclick="setType('بصرية')">إعاقة بصرية</button>
-    <button onclick="setType('سمعية')">إعاقة سمعية</button>
-    <button onclick="setType('تعلم')">صعوبات تعلم</button>
-    <p id="typeResult"></p>
-  </div>
+<section id="home">
+  <h2>Welcome to Wosool</h2>
+  <p>
+    Wosool helps people with disabilities and seniors use online government
+    services easily, independently, and safely without relying on others.
+  </p>
 </section>
 
-<section id="training" class="page hidden">
-  <div class="card">
-    <h2>تدريب: حجز موعد حكومي</h2>
-    <ol>
-      <li>الدخول على الموقع الحكومي</li>
-      <li>إنشاء حساب جديد</li>
-      <li>اختيار الخدمة المطلوبة</li>
-      <li>تحديد الموعد المناسب</li>
-      <li>تأكيد الطلب</li>
-    </ol>
-    <p>هذا تدريب توضيحي لمساعدة المستخدم على الفهم قبل استخدام الموقع الحقيقي.</p>
-  </div>
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="card">✔ Guidance for government websites</div>
+  <div class="card">✔ Explaining digital forms step by step</div>
+  <div class="card">✔ Support for disability services and benefits</div>
 </section>
 
-<section id="admin" class="page hidden">
+<section id="training">
+  <h2>Digital Training</h2>
   <div class="card">
-    <h2>لوحة مدير النظام</h2>
-    <p>يقوم مدير النظام بإضافة خدمات جديدة، صور، فيديوهات، وملفات صوتية.</p>
+    Learn how to:
     <ul>
-      <li>إضافة خدمة حكومية</li>
-      <li>تعديل خطوات التدريب</li>
-      <li>رفع وسائط متعددة</li>
+      <li>Create and use an online account</li>
+      <li>Book appointments</li>
+      <li>Apply for services safely</li>
     </ul>
   </div>
 </section>
 
-<script>
-  let selectedType = '';
-  function showPage(id){
-    document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));
-    document.getElementById(id).classList.remove('hidden');
-  }
-  function setType(type){
-    selectedType = type;
-    document.getElementById('typeResult').innerText = 'تم اختيار: ' + type;
-  }
-  function increaseFont(){
-    document.body.classList.toggle('big');
-  }
-  function readText(){
-    const text = document.body.innerText;
-    const msg = new SpeechSynthesisUtterance(text);
-    msg.lang = 'ar';
-    speechSynthesis.speak(msg);
-  }
-</script>
+<section id="tools">
+  <h2>Accessibility Tools</h2>
+  <button onclick="document.body.classList.toggle('large-text')">
+    Toggle Large Text
+  </button>
+  <button onclick="document.body.classList.toggle('high-contrast')">
+    High Contrast Mode
+  </button>
+</section>
+
+<section id="contact">
+  <h2>Contact & Support</h2>
+  <p>Email: support@wosool.com</p>
+  <p>We are here to help you anytime.</p>
+</section>
+
+<footer>
+  <p>© 2025 Wosool Project – Digital Inclusion for All</p>
+</footer>
+
 </body>
 </html>
