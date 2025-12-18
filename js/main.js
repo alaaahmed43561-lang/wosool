@@ -421,3 +421,22 @@ function readPage() {
         return;
     }
     
+    const utterance = new SpeechSynthesisUtterance(title + '. ' + subtitle);
+    utterance.lang = 'ar-SA';
+    utterance.rate = 0.9;
+    
+    window.speechSynthesis.speak(utterance);
+    showNotification('🔊 جاري قراءة محتوى الصفحة');
+}
+
+function stopReading() {
+    window.speechSynthesis.cancel();
+    showNotification('⏹️ تم إيقاف القراءة');
+}
+
+// إضافة نصائح للتصفح
+console.log('💡 نصائح:');
+console.log('1. اضغط على أي زر "ابدأ التدريب" لبدء التدريب العملي');
+console.log('2. ستفتح نافذة جديدة بالموقع الحكومي الحقيقي');
+console.log('3. استمع للشرح الصوتي لكل خطوة');
+console.log('4. استخدم أزرار التالي والسابق للتنقل');
