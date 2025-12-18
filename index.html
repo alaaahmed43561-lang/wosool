@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وصول - المدرب الرقمي لذوي الاحتياجات الخاصة</title>
+    <title>وصول - التدريب العملي لذوي الاحتياجات الخاصة</title>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- شريط الوصول السريع -->
+    <!-- شريط الوصول -->
     <div class="accessibility-bar">
         <button id="font-increase" title="تكبير الخط"><i class="fas fa-text-height"></i></button>
         <button id="font-decrease" title="تصغير الخط"><i class="fas fa-text-width"></i></button>
@@ -25,15 +26,14 @@
         <div class="container">
             <div class="logo">
                 <h1><i class="fas fa-hands-helping"></i> وصول</h1>
-                <p>المدرب الرقمي لذوي الاحتياجات الخاصة</p>
+                <p>التدريب العملي على الخدمات الحكومية</p>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home" class="active">الرئيسية</a></li>
-                    <li><a href="#services">الخدمات</a></li>
-                    <li><a href="#how-it-works">كيف يعمل</a></li>
-                    <li><a href="#stats">الإحصائيات</a></li>
-                    <li><a href="admin/login.html" class="admin-btn"><i class="fas fa-cog"></i> الإدارة</a></li>
+                    <li><a href="#home" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="#services"><i class="fas fa-list"></i> الخدمات</a></li>
+                    <li><a href="#real-training"><i class="fas fa-play-circle"></i> تدرب الآن</a></li>
+                    <li><a href="#stats"><i class="fas fa-chart-bar"></i> الإحصائيات</a></li>
                 </ul>
             </nav>
             <button class="menu-toggle"><i class="fas fa-bars"></i></button>
@@ -42,77 +42,111 @@
 
     <!-- القسم الرئيسي -->
     <main>
-        <!-- قسم الترحيب -->
+        <!-- الترحيب -->
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h2>استقلاليتك الرقمية تبدأ من هنا</h2>
-                    <p>موقع تدريبي ذكي يساعدك على استخدام الخدمات الحكومية الرقمية باستقلالية وثقة</p>
+                    <h2>تدريب <span class="highlight">عملي حقيقي</span> على المواقع الحكومية</h2>
+                    <p>لا محاكاة وهمية! نفتح معك المواقع الحقيقية وندربك خطوة بخطوة</p>
                     <div class="cta-buttons">
-                        <a href="#services" class="btn-primary"><i class="fas fa-play-circle"></i> ابدأ التدريب الآن</a>
-                        <a href="#how-it-works" class="btn-secondary"><i class="fas fa-question-circle"></i> كيف يعمل؟</a>
+                        <a href="#real-training" class="btn-primary">
+                            <i class="fas fa-rocket"></i> ابدأ التدريب العملي
+                        </a>
+                        <a href="#how-it-works" class="btn-secondary">
+                            <i class="fas fa-question-circle"></i> كيف يعمل؟
+                        </a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://img.freepik.com/free-vector/disability-awareness-concept-illustration_114360-8763.jpg?w=740" alt="تمكين ذوي الاحتياجات الخاصة رقمياً">
+                    <img src="https://img.icons8.com/clouds/500/000000/training.png" alt="التدريب العملي">
                 </div>
             </div>
         </section>
 
-        <!-- اختيار نوع الإعاقة -->
-        <section id="disability-selection" class="section">
+        <!-- التدريب العملي الحقيقي -->
+        <section id="real-training" class="section">
             <div class="container">
-                <h2 class="section-title">اختر نوع الإعاقة</h2>
-                <p class="section-subtitle">لنتكيف مع احتياجاتك التدريبية</p>
+                <h2 class="section-title">التدريب العملي الفعلي</h2>
+                <p class="section-subtitle">اختار خدمة حكومية وابدأ التدريب على الموقع الحقيقي</p>
                 
-                <div class="disability-cards">
-                    <div class="disability-card" data-disability="visual">
-                        <i class="fas fa-eye"></i>
-                        <h3>إعاقة بصرية</h3>
-                        <p>تدريب بصري مع صوتي</p>
+                <div class="real-training-cards">
+                    <!-- بطاقة تدريب 1 -->
+                    <div class="training-card" data-service="national-id">
+                        <div class="card-header">
+                            <i class="fas fa-id-card"></i>
+                            <h3>استخراج بطاقة رقم قومي</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-desc">تدريب عملي على موقع مصر الرقمية الرسمي</p>
+                            <ul class="card-features">
+                                <li><i class="fas fa-check"></i> فتح الموقع الرسمي</li>
+                                <li><i class="fas fa-check"></i> تسجيل الدخول</li>
+                                <li><i class="fas fa-check"></i> تقديم الطلب</li>
+                                <li><i class="fas fa-check"></i> متابعة الحالة</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn-start-real-training" data-service="national-id">
+                                <i class="fas fa-play"></i> ابدأ التدريب العملي
+                            </button>
+                        </div>
                     </div>
-                    
-                    <div class="disability-card" data-disability="hearing">
-                        <i class="fas fa-deaf"></i>
-                        <h3>إعاقة سمعية</h3>
-                        <p>تدريب مع ترجمة مرئية</p>
+
+                    <!-- بطاقة تدريب 2 -->
+                    <div class="training-card" data-service="electricity">
+                        <div class="card-header">
+                            <i class="fas fa-bolt"></i>
+                            <h3>دفع فاتورة الكهرباء</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-desc">تدريب على موقع الكهرباء للدفع الإلكتروني</p>
+                            <ul class="card-features">
+                                <li><i class="fas fa-check"></i> دخول الموقع</li>
+                                <li><i class="fas fa-check"></i> إدخال رقم العداد</li>
+                                <li><i class="fas fa-check"></i> التحقق من الفاتورة</li>
+                                <li><i class="fas fa-check"></i> الدفع الإلكتروني</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn-start-real-training" data-service="electricity">
+                                <i class="fas fa-play"></i> ابدأ التدريب العملي
+                            </button>
+                        </div>
                     </div>
-                    
-                    <div class="disability-card" data-disability="mobility">
-                        <i class="fas fa-wheelchair"></i>
-                        <h3>إعاقة حركية</h3>
-                        <p>تدريب بتقليل الضغطات</p>
-                    </div>
-                    
-                    <div class="disability-card" data-disability="cognitive">
-                        <i class="fas fa-brain"></i>
-                        <h3>إعاقة ذهنية</h3>
-                        <p>تدريب مبسط خطوة بخطوة</p>
+
+                    <!-- بطاقة تدريب 3 -->
+                    <div class="training-card" data-service="appointment">
+                        <div class="card-header">
+                            <i class="fas fa-calendar-check"></i>
+                            <h3>حجز موعد طبي</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-desc">تدريب على حجز المواعيد في المستشفيات الحكومية</p>
+                            <ul class="card-features">
+                                <li><i class="fas fa-check"></i> اختيار المستشفى</li>
+                                <li><i class="fas fa-check"></i> اختيار التخصص</li>
+                                <li><i class="fas fa-check"></i> اختيار الموعد</li>
+                                <li><i class="fas fa-check"></i> تأكيد الحجز</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn-start-real-training" data-service="appointment">
+                                <i class="fas fa-play"></i> ابدأ التدريب العملي
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- الخدمات التدريبية -->
-        <section id="services" class="section">
-            <div class="container">
-                <h2 class="section-title">الخدمات التدريبية المتاحة</h2>
-                <p class="section-subtitle">اختر الخدمة التي تريد التدرب عليها</p>
-                
-                <div class="services-grid">
-                    <!-- سيتم ملؤها ديناميكيًا -->
-                </div>
-            </div>
-        </section>
-
-        <!-- محاكي التدريب -->
+        <!-- محاكي التدريب العملي -->
         <section id="training-simulator" class="section hidden">
             <div class="container">
                 <div class="simulator-header">
-                    <h2 id="training-title">استخراج بطاقة رقم قومي</h2>
+                    <h2 id="training-title">التدريب العملي</h2>
                     <div class="simulator-controls">
                         <button id="prev-step" class="btn-control"><i class="fas fa-arrow-right"></i> السابق</button>
-                        <span id="step-counter">الخطوة 1 من 8</span>
+                        <span id="step-counter">الخطوة 1 من 5</span>
                         <button id="next-step" class="btn-control">التالي <i class="fas fa-arrow-left"></i></button>
                         <button id="repeat-step" class="btn-control"><i class="fas fa-redo"></i> إعادة</button>
                         <button id="exit-training" class="btn-control"><i class="fas fa-times"></i> إنهاء</button>
@@ -120,24 +154,41 @@
                 </div>
                 
                 <div class="simulator-body">
-                    <div class="step-content">
-                        <div class="step-text">
-                            <h3 id="step-title">الخطوة الأولى: دخول الموقع الرسمي</h3>
-                            <p id="step-description">سوف ندخل إلى الموقع الرسمي للخدمات الحكومية. ابحث عن رابط الموقع أو انقر على الرابط الذي سيظهر لك.</p>
-                        </div>
+                    <!-- التعليمات -->
+                    <div class="step-instruction">
+                        <h3 id="step-title">الخطوة 1: افتح الموقع الحكومي</h3>
+                        <p id="step-description">سنفتح معك موقع مصر الرقمية الرسمي. انقر على الزر بالأسفل لفتح الموقع في نافذة جديدة.</p>
                         
-                        <div class="step-media">
-                            <img id="step-image" src="https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg?w=740" alt="توضيح الخطوة الأولى">
-                            <div class="media-controls">
-                                <button id="play-audio" class="media-btn"><i class="fas fa-play"></i> استمع للشرح</button>
-                                <button id="play-video" class="media-btn"><i class="fas fa-video"></i> شاهد الفيديو</button>
-                                <button id="zoom-image" class="media-btn"><i class="fas fa-search-plus"></i> تكبير الصورة</button>
-                            </div>
+                        <div class="step-action">
+                            <button id="open-real-website" class="btn-action">
+                                <i class="fas fa-external-link-alt"></i> افتح الموقع الحكومي الآن
+                            </button>
+                            <p class="action-note">سيتم فتح الموقع في نافذة جديدة بجانب هذه التعليمات</p>
                         </div>
                     </div>
                     
-                    <div class="simulator-notes">
-                        <!-- سيتم ملؤها ديناميكيًا -->
+                    <!-- التلميحات -->
+                    <div class="step-hints">
+                        <div class="hint-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>تلميحات هذه الخطوة:</h4>
+                            <ul id="step-hints">
+                                <li>احفظ الرابط في المفضلة</li>
+                                <li>تأكد من ظهور القفل الأخضر</li>
+                                <li>إذا ظهر تحذير أمان، اضغط "متابعة"</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="hint-card">
+                            <i class="fas fa-headphones"></i>
+                            <h4>مساعد صوتي:</h4>
+                            <button id="play-audio-guide" class="btn-audio">
+                                <i class="fas fa-play"></i> استمع للتعليمات
+                            </button>
+                            <button id="repeat-instruction" class="btn-audio">
+                                <i class="fas fa-redo"></i> أعد الشرح
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -146,149 +197,77 @@
         <!-- كيف يعمل -->
         <section id="how-it-works" class="section">
             <div class="container">
-                <h2 class="section-title">كيف يعمل موقع "وصول"؟</h2>
+                <h2 class="section-title">كيف يعمل التدريب العملي؟</h2>
                 
-                <div class="steps">
-                    <div class="step">
+                <div class="works-steps">
+                    <div class="work-step">
                         <div class="step-number">1</div>
-                        <h3>اختر نوع الإعاقة</h3>
-                        <p>اختر الإعاقة التي تناسبك ليتم تكييف التدريب مع احتياجاتك.</p>
+                        <h3>اختر خدمة حكومية</h3>
+                        <p>اختر من قائمة الخدمات الحكومية المتاحة للتدريب</p>
                     </div>
                     
-                    <div class="step">
+                    <div class="work-step">
                         <div class="step-number">2</div>
-                        <h3>اختر الخدمة الحكومية</h3>
-                        <p>اختر الخدمة التي تريد التدرب عليها من قائمة الخدمات المتاحة.</p>
+                        <h3>افتح الموقع الحقيقي</h3>
+                        <p>نفتح لك الموقع الحكومي الرسمي في نافذة جديدة</p>
                     </div>
                     
-                    <div class="step">
+                    <div class="work-step">
                         <div class="step-number">3</div>
-                        <h3>تدرب خطوة بخطوة</h3>
-                        <p>اتبع التعليمات مع صور وفيديوهات وشرح صوتي لكل خطوة.</p>
+                        <h3>اتبع التعليمات</h3>
+                        <p>نوجهك خطوة بخطوة داخل الموقع الحقيقي</p>
                     </div>
                     
-                    <div class="step">
+                    <div class="work-step">
                         <div class="step-number">4</div>
-                        <h3>تطبيق على الموقع الحقيقي</h3>
-                        <p>بعد التدريب، انتقل إلى الموقع الحكومي الحقيقي وأنت واثق من قدراتك.</p>
+                        <h3>طبق بنفسك</h3>
+                        <p>تطبق ما تعلمته مباشرة على الموقع الحكومي</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- الإحصائيات -->
+        <!-- إحصائيات -->
         <section id="stats" class="section">
             <div class="container">
-                <h2 class="section-title">تأثير "وصول" على المجتمع</h2>
+                <h2 class="section-title">إنجازاتنا الحقيقية</h2>
                 
                 <div class="stats-grid">
-                    <div class="stat">
-                        <i class="fas fa-users"></i>
-                        <h3><span class="counter" data-target="1845">0</span>+</h3>
-                        <p>متدرب استفاد من الخدمة</p>
+                    <div class="stat-card">
+                        <i class="fas fa-user-graduate"></i>
+                        <h3><span class="counter" data-target="2150">0</span>+</h3>
+                        <p>متدرّب استفاد</p>
                     </div>
                     
-                    <div class="stat">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3><span class="counter" data-target="15">0</span>+</h3>
-                        <p>خدمة حكومية متاحة للتدريب</p>
+                    <div class="stat-card">
+                        <i class="fas fa-check-circle"></i>
+                        <h3><span class="counter" data-target="94">0</span>%</h3>
+                        <p>نجاح في التدريب</p>
                     </div>
                     
-                    <div class="stat">
-                        <i class="fas fa-chart-line"></i>
-                        <h3><span class="counter" data-target="92">0</span>%</h3>
-                        <p>زيادة في الثقة الرقمية</p>
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <h3><span class="counter" data-target="3245">0</span>+</h3>
+                        <p>ساعة تدريب</p>
                     </div>
                     
-                    <div class="stat">
-                        <i class="fas fa-hand-paper"></i>
-                        <h3><span class="counter" data-target="78">0</span>%</h3>
-                        <p>تقليل الاعتماد على الآخرين</p>
+                    <div class="stat-card">
+                        <i class="fas fa-star"></i>
+                        <h3><span class="counter" data-target="4.8">0</span></h3>
+                        <p>تقييم من 5</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- الشهادات -->
-        <section id="testimonials" class="section">
+        <!-- فيديو توضيحي -->
+        <section id="demo-video" class="section">
             <div class="container">
-                <h2 class="section-title">ماذا يقول مستخدمو "وصول"؟</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"أول مرة أقدر أستخدم موقع حكومي لوحدي من غير مساعدة ولادي. شكرًا لوصول!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <h4>أحمد سعيد</h4>
-                                <p>إعاقة بصرية</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"التدريب ساعدني أفهم الخطوات وأنا مرتاحة في بيتي. وفر عليّ عناء الذهاب للمكتب"</p>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <h4>فاطمة علي</h4>
-                                <p>إعاقة حركية</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <p class="testimonial-text">"الشرح البطيء والتكرار ساعدوني أفهم. كنت خايف من الإنترنت والحسابات، لكن الآن واثق"</p>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <h4>محمد خالد</h4>
-                                <p>إعاقة ذهنية</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- عن وصول -->
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-title">عن مشروع "وصول"</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>"وصول" هو مبادرة وطنية تهدف إلى تمكين ذوي الاحتياجات الخاصة من استخدام الخدمات الحكومية الرقمية باستقلالية تامة.</p>
-                        <p>نحن نؤمن بأن التحول الرقمي يجب أن يشمل الجميع دون استثناء، وأن التكنولوجيا يجب أن تكون أداة للدمج وليس العزل.</p>
-                        <div class="mission-vision">
-                            <div class="mission">
-                                <h3><i class="fas fa-bullseye"></i> رسالتنا</h3>
-                                <p>تحقيق الاستقلالية الرقمية لذوي الاحتياجات الخاصة وتقليل الفجوة الرقمية في المجتمع.</p>
-                            </div>
-                            <div class="vision">
-                                <h3><i class="fas fa-eye"></i> رؤيتنا</h3>
-                                <p>مجتمع رقمي شامل يتيح لجميع أفراده الوصول للخدمات الحكومية بسهولة وثقة.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-image">
-                        <img src="https://img.freepik.com/free-vector/teamwork-concept-illustration_114360-1021.jpg?w=740" alt="فريق وصول">
+                <h2 class="section-title">شاهد كيف يعمل</h2>
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <p>فيديو توضيحي للتدريب العملي</p>
                     </div>
                 </div>
             </div>
@@ -301,91 +280,43 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3><i class="fas fa-hands-helping"></i> وصول</h3>
-                    <p>تمكين ذوي الاحتياجات الخاصة من الاستخدام المستقل للخدمات الحكومية الرقمية.</p>
+                    <p>التدريب العملي على الخدمات الحكومية لذوي الاحتياجات الخاصة</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>روابط سريعة</h3>
+                    <h3>روابط حكومية</h3>
                     <ul>
-                        <li><a href="#home"><i class="fas fa-home"></i> الرئيسية</a></li>
-                        <li><a href="#services"><i class="fas fa-list"></i> الخدمات</a></li>
-                        <li><a href="#how-it-works"><i class="fas fa-question-circle"></i> كيف يعمل</a></li>
-                        <li><a href="#stats"><i class="fas fa-chart-bar"></i> الإحصائيات</a></li>
+                        <li><a href="https://www.egypt.gov.eg" target="_blank"><i class="fas fa-external-link-alt"></i> مصر الرقمية</a></li>
+                        <li><a href="https://epay.eehc.gov.eg" target="_blank"><i class="fas fa-bolt"></i> دفع فواتير الكهرباء</a></li>
+                        <li><a href="https://www.mohp.gov.eg" target="_blank"><i class="fas fa-hospital"></i> وزارة الصحة</a></li>
+                        <li><a href="https://www.moi.gov.eg" target="_blank"><i class="fas fa-id-card"></i> وزارة الداخلية</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h3>تواصل معنا</h3>
-                    <p><i class="fas fa-envelope"></i> info@wosool.com</p>
-                    <p><i class="fas fa-phone"></i> 16481</p>
-                    <p><i class="fas fa-map-marker-alt"></i> القاهرة، مصر</p>
+                    <p><i class="fas fa-phone"></i> 16481 (مجاني)</p>
+                    <p><i class="fas fa-envelope"></i> help@wosool.com</p>
+                    <p><i class="fas fa-clock"></i> من السبت للخميس 9ص-5م</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>جميع الحقوق محفوظة &copy; 2023 مشروع "وصول" - مسابقة التحول الرقمي</p>
+                <p>مشروع "وصول" - مسابقة التحول الرقمي © 2023 | جميع الحقوق محفوظة</p>
             </div>
         </div>
     </footer>
 
-    <!-- نموذج التقييم -->
-    <div id="feedback-modal" class="modal hidden">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2><i class="fas fa-star"></i> كيف كانت تجربة التدريب؟</h2>
-            <form id="feedback-form">
-                <div class="rating" data-current="0">
-                    <span class="star" data-value="1">★</span>
-                    <span class="star" data-value="2">★</span>
-                    <span class="star" data-value="3">★</span>
-                    <span class="star" data-value="4">★</span>
-                    <span class="star" data-value="5">★</span>
-                </div>
-                <textarea placeholder="شاركنا تعليقاتك أو اقتراحاتك..." rows="4"></textarea>
-                <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> إرسال التقييم</button>
-            </form>
-        </div>
-    </div>
-
     <!-- الإشعارات -->
-    <div id="notification" class="notification hidden"></div>
+    <div id="notification" class="notification"></div>
 
-    <!-- الفيديو -->
-    <div id="video-modal" class="modal hidden">
-        <div class="video-modal-content">
-            <span class="close-video">&times;</span>
-            <video controls id="training-video">
-                <source src="" type="video/mp4">
-                متصفحك لا يدعم تشغيل الفيديو
-            </video>
-        </div>
-    </div>
-
-    <!-- تسجيل الدخول -->
-    <div id="login-modal" class="modal hidden">
-        <div class="login-modal-content">
-            <span class="close-login">&times;</span>
-            <h2><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</h2>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="username"><i class="fas fa-user"></i> اسم المستخدم</label>
-                    <input type="text" id="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password"><i class="fas fa-lock"></i> كلمة المرور</label>
-                    <input type="password" id="password" required>
-                </div>
-                <button type="submit" class="btn-primary"><i class="fas fa-sign-in-alt"></i> دخول</button>
-            </form>
-        </div>
-    </div>
-
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
 </body>
 </html>
