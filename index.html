@@ -1,31 +1,298 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
-<title>Wosool | Home</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وصول - المدرب الرقمي لذوي الاحتياجات الخاصة</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- شريط الوصول السريع -->
+    <div class="accessibility-bar">
+        <button id="font-increase" title="تكبير الخط"><i class="fas fa-text-height"></i></button>
+        <button id="font-decrease" title="تصغير الخط"><i class="fas fa-text-width"></i></button>
+        <button id="high-contrast" title="تباين عالي"><i class="fas fa-adjust"></i></button>
+        <button id="text-to-speech" title="قراءة الصفحة"><i class="fas fa-volume-up"></i></button>
+        <button id="stop-speech" title="إيقاف القراءة"><i class="fas fa-stop"></i></button>
+    </div>
 
-<header>
-<h1>Wosool</h1>
-<p>Digital Accessibility for People with Disabilities</p>
-<nav>
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="training.html">Training</a>
-<a href="accessibility.html">Accessibility</a>
-<a href="contact.html">Contact</a>
-</nav>
-</header>
+    <!-- الرأس -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-hands-helping"></i> وصول</h1>
+                <p>المدرب الرقمي لذوي الاحتياجات الخاصة</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">الرئيسية</a></li>
+                    <li><a href="#services">الخدمات التدريبية</a></li>
+                    <li><a href="#how-it-works">كيف يعمل</a></li>
+                    <li><a href="#about">عن وصول</a></li>
+                    <li><a href="admin/login.html" class="admin-btn">لوحة التحكم</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
 
-<section>
-<h2>Why Wosool?</h2>
-<div class="card">
-People with disabilities face difficulties using online services.
-Wosool helps them access digital services easily and independently.
-</div>
-</section>
+    <!-- القسم الرئيسي -->
+    <main>
+        <!-- قسم الترحيب -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>استقلاليتك الرقمية تبدأ من هنا</h2>
+                    <p>موقع تدريبي ذكي يساعدك على استخدام الخدمات الحكومية الرقمية باستقلالية وثقة</p>
+                    <div class="cta-buttons">
+                        <a href="#services" class="btn-primary">ابدأ التدريب الآن</a>
+                        <a href="#how-it-works" class="btn-secondary">كيف يعمل الموقع؟</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/hero-illustration.svg" alt="تساوي الفرص الرقمية">
+                </div>
+            </div>
+        </section>
 
-<footer>© 2025 Wosool</footer>
+        <!-- اختيار نوع الإعاقة -->
+        <section id="disability-selection" class="section">
+            <div class="container">
+                <h2 class="section-title">اختر نوع الإعاقة</h2>
+                <p class="section-subtitle">لنتكيف مع احتياجاتك التدريبية</p>
+                
+                <div class="disability-cards">
+                    <div class="disability-card" data-disability="visual">
+                        <i class="fas fa-eye"></i>
+                        <h3>إعاقة بصرية</h3>
+                        <p>تدريب بصري مع صوتي</p>
+                    </div>
+                    
+                    <div class="disability-card" data-disability="hearing">
+                        <i class="fas fa-deaf"></i>
+                        <h3>إعاقة سمعية</h3>
+                        <p>تدريب مع ترجمة مرئية</p>
+                    </div>
+                    
+                    <div class="disability-card" data-disability="mobility">
+                        <i class="fas fa-wheelchair"></i>
+                        <h3>إعاقة حركية</h3>
+                        <p>تدريب بتقليل الضغطات</p>
+                    </div>
+                    
+                    <div class="disability-card" data-disability="cognitive">
+                        <i class="fas fa-brain"></i>
+                        <h3>إعاقة ذهنية</h3>
+                        <p>تدريب مبسط خطوة بخطوة</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- الخدمات التدريبية -->
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-title">الخدمات التدريبية المتاحة</h2>
+                <p class="section-subtitle">اختر الخدمة التي تريد التدرب عليها</p>
+                
+                <div class="services-grid">
+                    <!-- سيتم ملؤها ديناميكيًا من قاعدة البيانات -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h3>استخراج بطاقة رقم قومي</h3>
+                        <p>تدريب خطوة بخطوة على عملية استخراج البطاقة</p>
+                        <a href="#" class="btn-start-training" data-service="national-id">ابدأ التدريب</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>حجز موعد حكومي</h3>
+                        <p>كيفية حجز موعد في المؤسسات الحكومية</p>
+                        <a href="#" class="btn-start-training" data-service="appointment">ابدأ التدريب</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <h3>تسجيل طلب علاج على نفقة الدولة</h3>
+                        <p>التدرب على تقديم طلبات العلاج</p>
+                        <a href="#" class="btn-start-training" data-service="treatment">ابدأ التدريب</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- محاكي التدريب -->
+        <section id="training-simulator" class="section hidden">
+            <div class="container">
+                <div class="simulator-header">
+                    <h2 id="training-title">استخراج بطاقة رقم قومي</h2>
+                    <div class="simulator-controls">
+                        <button id="prev-step" class="btn-control"><i class="fas fa-arrow-right"></i> السابق</button>
+                        <span id="step-counter">الخطوة 1 من 8</span>
+                        <button id="next-step" class="btn-control">التالي <i class="fas fa-arrow-left"></i></button>
+                        <button id="repeat-step" class="btn-control"><i class="fas fa-redo"></i> إعادة</button>
+                        <button id="exit-training" class="btn-control"><i class="fas fa-times"></i> إنهاء</button>
+                    </div>
+                </div>
+                
+                <div class="simulator-body">
+                    <div class="step-content">
+                        <div class="step-text">
+                            <h3 id="step-title">الخطوة الأولى: دخول الموقع الرسمي</h3>
+                            <p id="step-description">سوف ندخل إلى الموقع الرسمي للخدمات الحكومية. ابحث عن رابط الموقع أو انقر على الرابط الذي سيظهر لك.</p>
+                        </div>
+                        
+                        <div class="step-media">
+                            <img id="step-image" src="images/step1.jpg" alt="توضيح الخطوة الأولى">
+                            <div class="media-controls">
+                                <button id="play-audio" class="media-btn"><i class="fas fa-play"></i> استمع للشرح</button>
+                                <button id="play-video" class="media-btn"><i class="fas fa-video"></i> شاهد الفيديو</button>
+                                <button id="zoom-image" class="media-btn"><i class="fas fa-search-plus"></i> تكبير الصورة</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="simulator-notes">
+                        <div class="note">
+                            <i class="fas fa-lightbulb"></i>
+                            <p><strong>نصيحة:</strong> تأكد من اتصالك بالإنترنت قبل البدء.</p>
+                        </div>
+                        <div class="note">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <p><strong>تنبيه:</strong> احتفظ بمستنداتك الشخصية جاهزة.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم كيف يعمل -->
+        <section id="how-it-works" class="section">
+            <div class="container">
+                <h2 class="section-title">كيف يعمل موقع "وصول"؟</h2>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>اختر نوع الإعاقة</h3>
+                        <p>اختر الإعاقة التي تناسبك ليتم تكييف التدريب مع احتياجاتك.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>اختر الخدمة الحكومية</h3>
+                        <p>اختر الخدمة التي تريد التدرب عليها من قائمة الخدمات المتاحة.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>تدرب خطوة بخطوة</h3>
+                        <p>اتبع التعليمات مع صور وفيديوهات وشرح صوتي لكل خطوة.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>تطبيق على الموقع الحقيقي</h3>
+                        <p>بعد التدريب، انتقل إلى الموقع الحكومي الحقيقي وأنت واثق من قدراتك.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الإحصائيات -->
+        <section id="stats" class="section">
+            <div class="container">
+                <h2 class="section-title">تأثير "وصول" على المجتمع</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat">
+                        <i class="fas fa-users"></i>
+                        <h3><span class="counter" data-target="1500">0</span>+</h3>
+                        <p>متدرب استفاد من الخدمة</p>
+                    </div>
+                    
+                    <div class="stat">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3><span class="counter" data-target="12">0</span>+</h3>
+                        <p>خدمة حكومية متاحة للتدريب</p>
+                    </div>
+                    
+                    <div class="stat">
+                        <i class="fas fa-chart-line"></i>
+                        <h3><span class="counter" data-target="87">0</span>%</h3>
+                        <p>زيادة في الثقة الرقمية</p>
+                    </div>
+                    
+                    <div class="stat">
+                        <i class="fas fa-hand-paper"></i>
+                        <h3><span class="counter" data-target="65">0</span>%</h3>
+                        <p>تقليل الاعتماد على الآخرين</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- التذييل -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-hands-helping"></i> وصول</h3>
+                    <p>تمكين ذوي الاحتياجات الخاصة من الاستخدام المستقل للخدمات الحكومية الرقمية.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#services">الخدمات</a></li>
+                        <li><a href="#how-it-works">كيف يعمل</a></li>
+                        <li><a href="admin/login.html">لوحة التحكم</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-envelope"></i> info@wosol.com</p>
+                    <p><i class="fas fa-phone"></i> 16481</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; 2023 مشروع "وصول" - مسابقة التحول الرقمي</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- نموذج التقييم -->
+    <div id="feedback-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>كيف كانت تجربة التدريب؟</h2>
+            <form id="feedback-form">
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                <textarea placeholder="شاركنا تعليقاتك أو اقتراحاتك..." rows="4"></textarea>
+                <button type="submit" class="btn-primary">إرسال التقييم</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/simulator.js"></script>
 </body>
 </html>
