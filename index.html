@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>وصول | تدريب ذوي الاحتياجات الخاصة</title>
+  <style>
+    body{font-family:Arial;background:#f5f5f5;margin:0;line-height:1.8}
+    header{background:#0057b7;color:white;padding:20px;text-align:center}
+    nav{background:#eee;padding:10px;text-align:center}
+    nav button{margin:5px}
+    section{padding:20px}
+    .card{background:white;padding:15px;margin:10px 0;border-radius:8px}
+    button{padding:10px 15px;font-size:16px;cursor:pointer}
+    .hidden{display:none}
+    .big{font-size:22px}
+  </style>
+</head>
+<body>
+<header>
+  <h1>موقع وصول</h1>
+  <p>منصة تدريب ذوي الاحتياجات الخاصة على استخدام الخدمات الحكومية الرقمية</p>
+</header>
+<nav>
+  <button onclick="showPage('home')">الرئيسية</button>
+  <button onclick="showPage('training')">التدريب</button>
+  <button onclick="showPage('admin')">مدير النظام</button>
+  <button onclick="increaseFont()">تكبير الخط</button>
+  <button onclick="readText()">🔊 قراءة صوتية</button>
+</nav>
+
+<section id="home" class="page">
+  <div class="card">
+    <h2>اختر نوع الإعاقة</h2>
+    <button onclick="setType('بصرية')">إعاقة بصرية</button>
+    <button onclick="setType('سمعية')">إعاقة سمعية</button>
+    <button onclick="setType('تعلم')">صعوبات تعلم</button>
+    <p id="typeResult"></p>
+  </div>
+</section>
+
+<section id="training" class="page hidden">
+  <div class="card">
+    <h2>تدريب: حجز موعد حكومي</h2>
+    <ol>
+      <li>الدخول على الموقع الحكومي</li>
+      <li>إنشاء حساب جديد</li>
+      <li>اختيار الخدمة المطلوبة</li>
+      <li>تحديد الموعد المناسب</li>
+      <li>تأكيد الطلب</li>
+    </ol>
+    <p>هذا تدريب توضيحي لمساعدة المستخدم على الفهم قبل استخدام الموقع الحقيقي.</p>
+  </div>
+</section>
+
+<section id="admin" class="page hidden">
+  <div class="card">
+    <h2>لوحة مدير النظام</h2>
+    <p>يقوم مدير النظام بإضافة خدمات جديدة، صور، فيديوهات، وملفات صوتية.</p>
+    <ul>
+      <li>إضافة خدمة حكومية</li>
+      <li>تعديل خطوات التدريب</li>
+      <li>رفع وسائط متعددة</li>
+    </ul>
+  </div>
+</section>
+
+<script>
+  let selectedType = '';
+  function showPage(id){
+    document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));
+    document.getElementById(id).classList.remove('hidden');
+  }
+  function setType(type){
+    selectedType = type;
+    document.getElementById('typeResult').innerText = 'تم اختيار: ' + type;
+  }
+  function increaseFont(){
+    document.body.classList.toggle('big');
+  }
+  function readText(){
+    const text = document.body.innerText;
+    const msg = new SpeechSynthesisUtterance(text);
+    msg.lang = 'ar';
+    speechSynthesis.speak(msg);
+  }
+</script>
+</body>
+</html>
