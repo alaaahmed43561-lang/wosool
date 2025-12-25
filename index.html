@@ -1,181 +1,40 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وصول - تدريب عملي على الخدمات الحكومية</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Wosool | Welcome</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- شريط الوصول -->
-    <div class="accessibility-bar">
-        <button onclick="increaseFont()"><i class="fas fa-text-height"></i></button>
-        <button onclick="decreaseFont()"><i class="fas fa-text-width"></i></button>
-        <button onclick="toggleContrast()"><i class="fas fa-adjust"></i></button>
-        <button onclick="readPage()"><i class="fas fa-volume-up"></i></button>
-        <button onclick="stopReading()"><i class="fas fa-stop"></i></button>
-    </div>
 
-    <!-- الرأس -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1><i class="fas fa-hands-helping"></i> وصول</h1>
-                <p>تدريب عملي حقيقي على المواقع الحكومية</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
-                    <li><a href="#training"><i class="fas fa-play-circle"></i> ابدأ التدريب</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header>
+<h1>Wosool</h1>
+<p>Helping Everyone Use Digital Services Easily</p>
+<nav>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="training.html">Training</a>
+<a href="accessibility.html">Accessibility</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
 
-    <main>
-        <!-- الترحيب -->
-        <section id="home" class="hero">
-            <div class="container">
-                <h1>التدريب العملي الحقيقي</h1>
-                <p class="subtitle">اختر الخدمة التي تريد التدرب عليها</p>
-                
-                <!-- بطاقات التدريب -->
-                <div class="training-cards">
-                    <!-- بطاقة 1: حجز موعد طبي -->
-                    <div class="training-card">
-                        <div class="card-icon">
-                            <i class="fas fa-calendar-check"></i>
-                        </div>
-                        <h3>حجز موعد طبي</h3>
-                        <p>تدريب على حجز المواعيد بالمستشفيات</p>
-                        <div class="card-meta">
-                            <span><i class="fas fa-list-ol"></i> 6 خطوات عملية</span>
-                            <span><i class="fas fa-clock"></i> 20 دقيقة</span>
-                        </div>
-                        <button class="start-btn" data-training="appointment">
-                            <i class="fas fa-play"></i> ابدأ التدريب
-                        </button>
-                    </div>
+<section class="hero">
+<h2>Welcome to Wosool</h2>
+<p>
+Wosool is a digital support platform designed especially for people with
+disabilities, seniors, and individuals who are not familiar with using
+the internet or online services.
+</p>
+<p>
+Our goal is to help users understand and use online government and digital
+services step by step, in a simple, clear, and human way.
+</p>
+<a href="training.html">
+<button>Start Learning</button>
+</a>
+</section>
 
-                    <!-- بطاقة 2: دفع فاتورة الكهرباء -->
-                    <div class="training-card">
-                        <div class="card-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h3>دفع فاتورة الكهرباء</h3>
-                        <p>تدريب على موقع شركة الكهرباء</p>
-                        <div class="card-meta">
-                            <span><i class="fas fa-list-ol"></i> 4 خطوات عملية</span>
-                            <span><i class="fas fa-clock"></i> 10 دقيقة</span>
-                        </div>
-                        <button class="start-btn" data-training="electricity">
-                            <i class="fas fa-play"></i> ابدأ التدريب
-                        </button>
-                    </div>
+<footer>© 2025 Wosool – Digital Inclusion for All</footer>
 
-                    <!-- بطاقة 3: استخراج بطاقة -->
-                    <div class="training-card">
-                        <div class="card-icon">
-                            <i class="fas fa-id-card"></i>
-                        </div>
-                        <h3>استخراج بطاقة رقم قومي</h3>
-                        <p>تدريب عملي على موقع مصر الرقمية</p>
-                        <div class="card-meta">
-                            <span><i class="fas fa-list-ol"></i> 5 خطوات عملية</span>
-                            <span><i class="fas fa-clock"></i> 15 دقيقة</span>
-                        </div>
-                        <button class="start-btn" data-training="national-id">
-                            <i class="fas fa-play"></i> ابدأ التدريب
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- محاكي التدريب -->
-        <section id="training-simulator" class="training-simulator hidden">
-            <div class="container">
-                <!-- رأس المحاكي -->
-                <div class="simulator-header">
-                    <h2 id="simulator-title">استخراج بطاقة رقم قومي</h2>
-                    <div class="step-indicator">
-                        <span id="current-step">1</span> / <span id="total-steps">5</span>
-                    </div>
-                </div>
-
-                <!-- محتوى الخطوة -->
-                <div class="step-content">
-                    <!-- التعليمات -->
-                    <div class="instruction">
-                        <h3 id="step-title">الخطوة الأولى: افتح موقع مصر الرقمية</h3>
-                        <p id="step-description">سنفتح معك الموقع الرسمي للخدمات الحكومية. اضغط على الزر بالأسفل لفتح الموقع في نافذة جديدة.</p>
-                        
-                        <!-- زر فتح الموقع -->
-                        <div class="action-area">
-                            <a href="https://www.egypt.gov.eg" target="_blank" class="action-btn" id="website-link">
-                                <i class="fas fa-external-link-alt"></i> افتح موقع مصر الرقمية
-                            </a>
-                            <p class="hint">سيتم فتح الموقع في نافذة جديدة</p>
-                        </div>
-
-                        <!-- التفاصيل -->
-                        <div class="details">
-                            <h4><i class="fas fa-info-circle"></i> كيف تعمل:</h4>
-                            <ol id="step-steps">
-                                <li>اضغط على الزر فوق لفتح الموقع</li>
-                                <li>انتظر حتى يتحمل الموقع بالكامل</li>
-                                <li>ابحث عن زر "تسجيل الدخول"</li>
-                            </ol>
-                        </div>
-                    </div>
-
-                    <!-- المساعدات -->
-                    <div class="assistance">
-                        <!-- الصوت -->
-                        <div class="audio-box">
-                            <h4><i class="fas fa-volume-up"></i> المساعد الصوتي</h4>
-                            <button class="audio-btn" id="play-audio">
-                                <i class="fas fa-play"></i> استمع للشرح
-                            </button>
-                            <button class="audio-btn" id="repeat-audio">
-                                <i class="fas fa-redo"></i> أعد الشرح
-                            </button>
-                        </div>
-
-                        <!-- النصائح -->
-                        <div class="tips-box">
-                            <h4><i class="fas fa-lightbulb"></i> نصائح مهمة</h4>
-                            <ul id="step-tips">
-                                <li>تأكد من اتصال الإنترنت</li>
-                                <li>احفظ الموقع في المفضلة</li>
-                                <li>إذا واجهت مشكلة، أعد تحميل الصفحة</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- أدوات التحكم -->
-                <div class="controls">
-                    <button class="control-btn" id="prev-btn">
-                        <i class="fas fa-arrow-right"></i> السابق
-                    </button>
-                    <button class="control-btn" id="next-btn">
-                        التالي <i class="fas fa-arrow-left"></i>
-                    </button>
-                    <button class="control-btn finish" id="finish-btn">
-                        <i class="fas fa-flag-checkered"></i> إنهاء
-                    </button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- الإشعارات -->
-    <div id="notification" class="notification"></div>
-
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
 </body>
 </html>
