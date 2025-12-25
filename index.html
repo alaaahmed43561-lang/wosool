@@ -1,109 +1,406 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>Wosool</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f7fb;
-      color: #333;
-      line-height: 1.8;
-    }
-
-    header {
-      background: linear-gradient(90deg, #2563eb, #4f46e5);
-      color: white;
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #1e40af;
-    }
-
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    a {
-      color: #2563eb;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer {
-      background: #1e3a8a;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وصول - تمكين ذوي الاحتياجات الخاصة رقمياً</title>
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <!-- شريط الوصول السريع -->
+    <div class="accessibility-bar">
+        <button onclick="increaseFont()" title="تكبير الخط"><i class="fas fa-text-height"></i></button>
+        <button onclick="decreaseFont()" title="تصغير الخط"><i class="fas fa-text-width"></i></button>
+        <button onclick="toggleContrast()" title="تباين عالي"><i class="fas fa-adjust"></i></button>
+        <button onclick="readPage()" title="قراءة الصفحة"><i class="fas fa-volume-up"></i></button>
+        <button onclick="stopReading()" title="إيقاف القراءة"><i class="fas fa-stop"></i></button>
+    </div>
 
-<header>
-  <h1>Wosool</h1>
-  <p>A platform to help people with disabilities and beginners use online services easily</p>
-</header>
+    <!-- الرأس -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-hands-helping"></i> وصول</h1>
+                <p>تمكين الجميع من الخدمات الرقمية</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="training.html"><i class="fas fa-graduation-cap"></i> ابدأ التدريب</a></li>
+                    <li><a href="#services"><i class="fas fa-list-check"></i> الخدمات</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> عن وصول</a></li>
+                    <li><a href="#contact"><i class="fas fa-headset"></i> الدعم</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
 
-<section>
-  <div class="card">
-    <h2>About Wosool</h2>
-    <p>
-      Wosool is designed to help people with disabilities, elderly users,
-      illiterate users, and anyone who struggles with using the internet.
-      The platform explains online services step by step in a very simple way.
-    </p>
-  </div>
+    <!-- البطل (Hero Section) -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">بوابتك للاستقلالية <span class="highlight">الرقمية</span></h2>
+                    <p class="hero-subtitle">
+                        <strong>"وصول"</strong> هو مشروع وطني لتمكين <span class="highlight">ذوي الاحتياجات الخاصة، كبار السن، والأميين رقمياً</span> 
+                        من استخدام الخدمات الحكومية الإلكترونية <strong>بثقة واستقلالية</strong>
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <i class="fas fa-wheelchair"></i>
+                            <h3>2,500+</h3>
+                            <p>من ذوي الاحتياجات</p>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-user-graduate"></i>
+                            <h3>95%</h3>
+                            <p>نجاح في التدريب</p>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-handshake"></i>
+                            <h3>78%</h3>
+                            <p>تقليل الاعتماد على الآخرين</p>
+                        </div>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="training.html" class="btn-primary btn-large">
+                            <i class="fas fa-rocket"></i> ابدأ رحلتك الرقمية الآن
+                        </a>
+                        <a href="#how-it-works" class="btn-secondary">
+                            <i class="fas fa-play-circle"></i> شاهد كيف يعمل
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://cdn.pixabay.com/photo/2020/04/13/20/23/accessibility-5038710_1280.jpg" alt="تمكين ذوي الاحتياجات الخاصة">
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="card">
-    <h2>Available Services Training</h2>
-    <ul>
-      <li>How to create and use email</li>
-      <li>Using government service websites</li>
-      <li>Online appointments and forms</li>
-      <li>Basic internet safety</li>
-    </ul>
-  </div>
+    <!-- الفئات المستهدفة -->
+    <section class="target-section">
+        <div class="container">
+            <h2 class="section-title">من نخدم؟</h2>
+            <p class="section-subtitle">"وصول" صُمم خصيصاً لمساعدة هذه الفئات</p>
+            
+            <div class="target-grid">
+                <div class="target-card">
+                    <div class="target-icon disability">
+                        <i class="fas fa-wheelchair-move"></i>
+                    </div>
+                    <h3>ذوو الاحتياجات الخاصة</h3>
+                    <p>بصرية، سمعية، حركية، ذهنية</p>
+                    <ul class="target-features">
+                        <li><i class="fas fa-check"></i> تكييف الواجهة مع الإعاقة</li>
+                        <li><i class="fas fa-check"></i> شرح صوتي ومرئي</li>
+                        <li><i class="fas fa-check"></i> تبسيط الخطوات</li>
+                    </ul>
+                </div>
 
-  <div class="card">
-    <h2>Learning Resources</h2>
-    <p>Extra resources to learn more:</p>
-    <ul>
-      <li><a href="https://www.youtube.com/watch?v=0pDE4VX_9Kk" target="_blank">Basic Internet Skills (Video)</a></li>
-      <li><a href="https://edu.gcfglobal.org/en/topics/tech/" target="_blank">Free Technology Lessons</a></li>
-    </ul>
-  </div>
+                <div class="target-card">
+                    <div class="target-icon elderly">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>كبار السن</h3>
+                    <p>الأجيال غير الرقمية</p>
+                    <ul class="target-features">
+                        <li><i class="fas fa-check"></i> خطوات بطيئة وواضحة</li>
+                        <li><i class="fas fa-check"></i> لغة بسيطة</li>
+                        <li><i class="fas fa-check"></i> تكرار غير محدود</li>
+                    </ul>
+                </div>
 
-  <div class="card">
-    <h2>Accessibility Features</h2>
-    <ul>
-      <li>Simple language</li>
-      <li>Clear steps</li>
-      <li>Large readable text</li>
-      <li>Suitable for beginners</li>
-    </ul>
-  </div>
-</section>
+                <div class="target-card">
+                    <div class="target-icon illiterate">
+                        <i class="fas fa-book-open-reader"></i>
+                    </div>
+                    <h3>الأميون رقمياً</h3>
+                    <p>من لا يجيدون استخدام الإنترنت</p>
+                    <ul class="target-features">
+                        <li><i class="fas fa-check"></i> تعليم من الصفر</li>
+                        <li><i class="fas fa-check"></i> صور وفيديوهات توضيحية</li>
+                        <li><i class="fas fa-check"></i> مساعد شخصي افتراضي</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-  <p>Wosool © 2025 – Digital inclusion for everyone</p>
-</footer>
+    <!-- المشكلة والحل -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="problem-side">
+                <h2 class="section-title">المشكلة التي نحلّها</h2>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>العجز الرقمي الحقيقي</h3>
+                    <ul class="problem-list">
+                        <li><i class="fas fa-times"></i> <strong>اعتماد كامل</strong> على الأبناء والأقارب</li>
+                        <li><i class="fas fa-times"></i> <strong>خوف وقلق</strong> من التعامل مع المواقع الحكومية</li>
+                        <li><i class="fas fa-times"></i> <strong>فجوة رقمية</strong> تمنع الاستقلالية</li>
+                        <li><i class="fas fa-times"></i> <strong>خدمات غير مستخدمة</strong> رغم توفرها</li>
+                        <li><i class="fas fa-times"></i> <strong>إحباط</strong> من التعقيدات الإلكترونية</li>
+                    </ul>
+                </div>
+            </div>
 
+            <div class="solution-side">
+                <h2 class="section-title">حل "وصول"</h2>
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>التمكين الرقمي الشامل</h3>
+                    <ul class="solution-list">
+                        <li><i class="fas fa-check"></i> <strong>تدريب عملي حقيقي</strong> على المواقع الحكومية</li>
+                        <li><i class="fas fa-check"></i> <strong>مساعد صوتي</strong> يشرح كل خطوة</li>
+                        <li><i class="fas fa-check"></i> <strong>تكييف تلقائي</strong> مع قدرات المستخدم</li>
+                        <li><i class="fas fa-check"></i> <strong>تكرار غير محدود</strong> للتدريب</li>
+                        <li><i class="fas fa-check"></i> <strong>شهادة إنجاز</strong> بعد كل تدريب</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- كيف يعمل -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">كيف يعمل "وصول"؟</h2>
+            <p class="section-subtitle">4 خطوات بسيطة للاستقلالية الرقمية</p>
+            
+            <div class="works-steps">
+                <div class="work-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>اختر فئتك</h3>
+                        <p>اختر من القائمة: إعاقة بصرية، سمعية، حركية، ذهنية، كبير سن، أو أمي رقمياً</p>
+                        <div class="step-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>اختر الخدمة</h3>
+                        <p>اختار من 15+ خدمة حكومية: بطاقة الرقم القومي، فواتير، مواعيد، معاملات...</p>
+                        <div class="step-icon">
+                            <i class="fas fa-list-check"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>تدرب عملياً</h3>
+                        <p>نفتح لك الموقع الحكومي الحقيقي ونشرح كل خطوة بالصوت والصورة</p>
+                        <div class="step-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>كن مستقلاً</h3>
+                        <p>بعد التدريب، ستتمكن من استخدام الخدمة بنفسك دون مساعدة</p>
+                        <div class="step-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-center">
+                <a href="training.html" class="btn-primary btn-large">
+                    <i class="fas fa-graduation-cap"></i> جرب التدريب الآن مجاناً
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- الشهادات -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">ماذا يقولون عن "وصول"؟</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="سعاد">
+                        <div class="testimonial-info">
+                            <h4>سعاد محمد</h4>
+                            <p>إعاقة بصرية - ٥٨ سنة</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "أول مرة في حياتي أقدِر أستخدم موقع حكومي لوحدي. المساعد الصوتي كان كأنه معي في الغرفة!"
+                    </p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="علي">
+                        <div class="testimonial-info">
+                            <h4>علي عبدالله</h4>
+                            <p>كبير سن - ٧٠ سنة</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "كنت خايف من الإنترنت، بس التدريب البطيء والتكرار خلّاني أثق في نفسي. الحمدلله بعرف أدفع فواتيري!"
+                    </p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="مريم">
+                        <div class="testimonial-info">
+                            <h4>مريم خالد</h4>
+                            <p>والدة طفل ذي إعاقة ذهنية</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "ابني بيحب الفيديوهات والصور. 'وصول' خلاه يفهم الخطوات ببطء ومتكرر. شكراً لكم!"
+                    </p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الشركاء -->
+    <section class="partners">
+        <div class="container">
+            <h2 class="section-title">بالشراكة مع</h2>
+            <div class="partners-logos">
+                <div class="partner-logo">
+                    <i class="fas fa-landmark"></i>
+                    <p>وزارة الاتصالات</p>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <p>مجلس ذوي الإعاقة</p>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-university"></i>
+                    <p>مصر الرقمية</p>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-hands-helping"></i>
+                    <p>الجمعيات الأهلية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- دعوة للعمل -->
+    <section class="call-to-action">
+        <div class="container">
+            <div class="cta-content">
+                <h2>مستعد لرحلتك نحو الاستقلالية الرقمية؟</h2>
+                <p>انضم إلى آلاف الأشخاص الذين أصبحوا مستقلين رقمياً بفضل "وصول"</p>
+                <div class="cta-buttons">
+                    <a href="training.html" class="btn-primary btn-large">
+                        <i class="fas fa-graduation-cap"></i> ابدأ التدريب المجاني
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        <i class="fas fa-phone"></i> اتصل بنا للمساعدة
+                    </a>
+                </div>
+                <p class="cta-note">
+                    <i class="fas fa-clock"></i> التدريب متاح 24/7 • 
+                    <i class="fas fa-lock"></i> آمن وخصوصية تامة • 
+                    <i class="fas fa-heart"></i> مجاني بالكامل
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-hands-helping"></i> وصول</h3>
+                    <p>مشروع وطني لتمكين ذوي الاحتياجات الخاصة وكبار السن والأميين رقمياً من استخدام الخدمات الحكومية الإلكترونية باستقلالية وثقة.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                        <li><a href="training.html"><i class="fas fa-graduation-cap"></i> التدريب</a></li>
+                        <li><a href="#services"><i class="fas fa-list-check"></i> الخدمات</a></li>
+                        <li><a href="#about"><i class="fas fa-info-circle"></i> عن المشروع</a></li>
+                        <li><a href="#contact"><i class="fas fa-headset"></i> الدعم الفني</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>مواقع حكومية</h3>
+                    <ul>
+                        <li><a href="https://www.egypt.gov.eg" target="_blank"><i class="fas fa-external-link-alt"></i> مصر الرقمية</a></li>
+                        <li><a href="https://www.moi.gov.eg" target="_blank"><i class="fas fa-id-card"></i> وزارة الداخلية</a></li>
+                        <li><a href="https://www.mohp.gov.eg" target="_blank"><i class="fas fa-hospital"></i> وزارة الصحة</a></li>
+                        <li><a href="https://www.mof.gov.eg" target="_blank"><i class="fas fa-money-bill"></i> وزارة المالية</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-phone"></i> 16481 (مجاني)</p>
+                    <p><i class="fas fa-envelope"></i> support@wosool.gov.eg</p>
+                    <p><i class="fas fa-clock"></i> الأحد - الخميس: 8 ص - 8 م</p>
+                    <p><i class="fas fa-map-marker-alt"></i> القاهرة - مصر</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2023 مشروع "وصول" - جميع الحقوق محفوظة | مبادرة وطنية ضمن استراتيجية التحول الرقمي</p>
+                <p class="footer-note">
+                    هذا الموقع جزء من مسابقة المبدع الصغير ويهدف لتمكين الفئات الأكثر احتياجاً من الخدمات الرقمية
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/homepage.js"></script>
 </body>
 </html>
